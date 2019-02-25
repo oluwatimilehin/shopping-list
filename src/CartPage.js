@@ -4,6 +4,19 @@ import Item from "./Item";
 import "./CartPage.css";
 
 function CartPage({ items, onAddOne, onRemoveOne }) {
+  return items.length > 0 ? <CartPageList items={items} onAddOne={onAddOne} onRemoveOne={onRemoveOne} /> : <EmptyCartDisplay />;
+}
+
+function EmptyCartDisplay() {
+  return (
+    <div className="CartPage-empty">
+      <div>Your cart is empty</div>
+      <div>Why not add some expensive products to it?</div>
+    </div>
+  );
+}
+
+function CartPageList({ items, onAddOne, onRemoveOne }) {
   let total = 0;
   items.forEach(element => {
     total += element.count * element.price;

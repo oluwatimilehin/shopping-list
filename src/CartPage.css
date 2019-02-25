@@ -34,3 +34,14 @@
   text-align: right;
   padding: 10px;
 }
+
+.CartPage-empty {
+  width: inherit;
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  justify-content: space-between;
+  color: gray;
+  height: 60px;
+  text-align: center;
+}
